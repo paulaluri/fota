@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<div class="fota-panel">
+	<form method="POST" action="{% url 'register' %}">
+		<img src="static/images/logo.svg" alt="logo"><br>
+		{% for error in form.non_field_errors %}
+        <div class="error-row">{{ error }}</div>
+        {% endfor %}
+		<input name="username" class="fota-text{% if form.username.errors.as_text %} input-error{% endif %}" type="text" placeholder="username" value="{% if form.username.value %}{{ form.username.value }}{% endif %}"><br>
+		<div class="form-error-field">{{form.username.errors.as_text}}</div>
+		<input name="password" class="fota-text{% if form.password.errors.as_text %} input-error{% endif %}" type="password" placeholder="password"><br>
+		<div class="form-error-field">{{form.password.errors.as_text}}</div>
+		<input name="password_confirm" class="fota-text{% if form.password_confirm.errors.as_text %} input-error{% endif %}" type="password" placeholder="confirm password"><br>
+		<div class="form-error-field">{{form.password_confirm.errors.as_text}}</div>
+		<input name="first_name" class="fota-text{% if form.first_name.errors.as_text %} input-error{% endif %}" type="text" placeholder="first name" value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}"><br>
+		<div class="form-error-field">{{form.first_name.errors.as_text}}</div>
+		<input name="last_name" class="fota-text{% if form.last_name.errors.as_text %} input-error{% endif %}" type="text" placeholder="last name" value="{% if form.last_name.value %}{{ form.last_name.value }}{% endif %}"><br>
+		<div class="form-error-field">{{form.last_name.errors.as_text}}</div>
+		<a href="{% url 'login' %}"><input class="fota-button" type="button" value="Cancel"></a>
+		<input class="fota-button" type="submit" value="Register">
+		{% csrf_token %}
+	</form>
+</div>
+{% endblock %}

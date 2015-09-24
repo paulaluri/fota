@@ -1,0 +1,133 @@
+html, body{
+	margin:0;
+	height:100%;
+}
+
+body{
+	background-color:#F33131;
+	position:relative;
+	font-family: 'Open Sans', sans-serif;
+	font-size:3vmin;
+}
+
+div.fota-panel{
+	display:inline-block;
+	position:absolute;
+  	top: 50%;
+  	left:25%;
+  	right:25%;
+  	transform: translateY(-50%);
+	width:50%;
+	height:auto;
+
+	font-size:2vmin;
+	color:#FFF;
+	border-radius:10vmin;
+	border:8px solid #FFF;
+	padding:2vmin;
+	text-align:center;
+	box-shadow: 3px 3px 15px 2px rgba(0, 0, 0, 0.31);
+}
+
+div.fota-content{
+	display:inline-block;
+	width:50%;
+	height:auto;
+	background-color:#DDD;
+	margin-top:10px;
+	margin-left:25%;
+	border-radius:20px;
+	transform:none;
+	font-size:20px;
+	color:#444;
+	border:8px solid #FFF;
+	padding:10px;
+	box-sizing:border-box;
+	text-align:left;
+	box-shadow: 3px 3px 15px 2px rgba(0, 0, 0, 0.31);
+}
+
+div.fota-meta{
+	font-size:12px;
+	text-align:right;
+}
+
+.fota-text, .fota-button{
+	border:4px solid #FFF;
+	background-color:#F33131;
+	color:#FFF;
+	font-family:'Open Sans', sans-serif;
+    font-size:2vmin;
+    padding:2vmin;
+    border-radius:10vmin;
+    margin:1vmin;
+    outline:none;   
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2) inset;
+}
+
+.fota-text{
+	height:6vmin;
+	width:80%;
+	padding:2vmin 4vmin;
+	box-sizing:border-box;
+}
+
+textarea.fota-text{
+	border-radius:20px;
+	padding:10px;
+	height:auto;
+	resize:none;
+	width:100%;
+	box-sizing:border-box;
+	margin:0;
+
+}
+
+.fota-footer{
+	color:#FFF;
+	font-size:9px;
+	text-align:center;
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	height:20px;
+	line-height:20px;
+	vertical-align:middle;
+}
+
+.fota-text-raw{
+	border:2px solid #FFF;
+}
+
+.input-error{
+	background-color:#862222 !important;
+}
+
+.fota-flag{
+	margin-left:4px;
+}
+
+form.fota-form{
+	display:inline;
+}
+
+input.fota-button{
+	font-size:2vmin;
+	font-weight:700;
+	cursor:pointer;
+	transition:color .2s, background-color .2s;
+}
+
+input.fota-button:hover{
+	background-color:#EF7777;
+}
+
+input.fota-button:active{
+	background-color:#862222;
+}
+
+*::-webkit-input-placeholder
+{
+   color: #F88;
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>{% block title %}{% endblock %}</title>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link href="static/css/fotalk.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+		{% block content %}{% endblock %}
+
+		<div class="fota-footer">Copyright 2015, Aluri Studios. All Rights Reserved.</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="static/js/fotalk.js"></script>
+		{% block js %}{% endblock %}
+	</body>
+
+</html>

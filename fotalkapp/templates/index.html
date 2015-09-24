@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Fota{% endblock %}
+{% block content %}
+<img src="static/images/logo.svg" alt="logo" height="40px"><br>
+<div class="fota-content">
+	<form id="postForm" method="POST" action="{% url 'post' %}">
+		<textarea id="postText" class="fota-text" name="text" cols="40" rows="3" placeholder="write something..."></textarea>
+		<input name="country_code" type="hidden" value="{{cc}}">
+		{% csrf_token %}
+	</form>
+</div>
+<div class="fota-posts" latest="{{latest}}">
+	{% for p in posts reversed %}
+	<div pid="{{p.id}}" class="fota-content">
+		{{p.text}}
+		<div class="fota-meta"><strong>{{p.user.first_name}} {{p.user.last_name}}</strong>, <span class="post-time" type="raw">{{p.time.isoformat}}</span><img class="fota-flag" src="static/images/famflags/{{ p.country_code }}.png" alt="flag"></div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="static/js/post.js"></script>
+{% endblock %}
